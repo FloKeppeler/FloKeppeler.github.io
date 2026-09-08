@@ -88,6 +88,16 @@ ul.topics li{margin-bottom:6px}
     color:var(--bg); border-radius:4px; font-weight:500; border-bottom:none}
 .cv:hover{opacity:.88; border-bottom:none}
 
+/* address written for humans, not for harvesters */
+.mail{font-variant-numeric:tabular-nums}
+.hint{color:var(--muted); font-size:.86rem}
+
+/* a portrait figure set beside the text, stacking above it on narrow screens */
+figure.side{float:right; width:230px; margin:4px 0 14px 26px}
+figure.side img{width:100%; height:auto; border-radius:6px; display:block}
+figure.side figcaption{margin-top:6px; color:var(--muted); font-size:.8rem; line-height:1.4}
+h2{clear:both}
+
 .photos{display:flex; gap:12px; flex-wrap:wrap; margin:0 0 16px}
 .photos img{flex:1 1 200px; min-width:0; max-width:100%; height:190px;
             object-fit:cover; border-radius:6px}
@@ -103,6 +113,7 @@ footer .fnav{list-style:none; padding:0; margin:0 0 10px; display:flex; flex-wra
   h1{font-size:1.55rem}
   nav ul{gap:2px 16px}
   .photos img{height:150px}
+  figure.side{float:none; width:100%; max-width:280px; margin:4px 0 18px}
 }
 </style>
 </head>
@@ -128,22 +139,18 @@ footer .fnav{list-style:none; padding:0; margin:0 0 10px; display:flex; flex-wra
   <img class="portrait" src="/assets/portrait.jpg" alt="Florian Keppeler" width="132" height="132">
   <div class="ident">
     <h1>Florian Keppeler</h1>
-    <p class="role">Associate Professor, <strong>King Frederik Center for Public Leadership</strong><br>
-       Department of Political Science, Aarhus University</p>
-    <p class="role">Affiliated Scholar, The People Lab, Harvard Kennedy School</p>
+    <p class="role">Associate Professor, <strong><a href="https://ps.au.dk/en/king-frederik-center-for-public-leadership" target="_blank" rel="noopener noreferrer">King Frederik Center for Public Leadership</a></strong><br>
+       <a href="https://ps.au.dk/" target="_blank" rel="noopener noreferrer">Department of Political Science</a>, <a href="https://bss.au.dk/en" target="_blank" rel="noopener noreferrer">Aarhus University</a>, Denmark</p>
+    <p class="role">Affiliated Scholar, <a href="https://peoplelab.hks.harvard.edu/our-team/" target="_blank" rel="noopener noreferrer">The People Lab</a>, Harvard Kennedy School</p>
   </div>
 </header>
 
 <main id="main">
 
-<p class="lead">I am an Associate Professor at the
-<a href="https://ps.au.dk/">Department of Political Science</a>,
-<a href="https://bss.au.dk/en">Aarhus University</a> (Denmark) and work at the
-<a href="https://ps.au.dk/en/king-frederik-center-for-public-leadership">King Frederik Center for Public Leadership</a>.
-I am also an <a href="https://peoplelab.hks.harvard.edu/our-team/">affiliated scholar at The People Lab, Harvard Kennedy School</a>.
-Much of my work focuses on the people who deliver public services: how to attract them, how to support
-them, and how AI can help public managers make better decisions. I co-design studies with government
-partners to ensure that research is useful to practitioners and adopted at scale.</p>
+<p class="lead">Much of my work focuses on the people who deliver public services: how to attract
+them, how to support them, and how AI can help public managers make better decisions. I co-design
+studies with government partners to ensure that research is useful to practitioners and adopted at
+scale.</p>
 
 <p>My research uses large-scale field experiments and causal inference methods. It focuses on the
 following topics:</p>
@@ -157,17 +164,17 @@ following topics:</p>
 <h2>Recent publications</h2>
 
 <div class="item">
-  <a class="t" href="https://doi.org/10.1111/padm.70053">How Do Strikes and Lockouts Affect Applications to Danish Public Service Professional Education Programs? A Synthetic Control Analysis</a>
+  <a class="t" href="https://doi.org/10.1111/padm.70053" target="_blank" rel="noopener noreferrer">How Do Strikes and Lockouts Affect Applications to Danish Public Service Professional Education Programs? A Synthetic Control Analysis</a>
   <span class="meta">Heide, C., &amp; Keppeler, F. (2026). <em>Public Administration</em>.</span>
 </div>
 
 <div class="item">
-  <a class="t" href="https://doi.org/10.1093/jopart/muaf009">How Ensembling AI and Public Managers Improves Decision-Making</a>
+  <a class="t" href="https://doi.org/10.1093/jopart/muaf009" target="_blank" rel="noopener noreferrer">How Ensembling AI and Public Managers Improves Decision-Making</a>
   <span class="meta">Keppeler, F., Borchert, J., Pedersen, M. J., &amp; Lehmann Nielsen, V. (2025). <em>Journal of Public Administration Research and Theory</em>, 35(3), 261&ndash;276.</span>
 </div>
 
 <div class="item">
-  <a class="t" href="https://doi.org/10.1001/jamanetworkopen.2024.58542">Financial Incentives for COVID-19 Vaccination: A Cluster Randomized Clinical Trial</a>
+  <a class="t" href="https://doi.org/10.1001/jamanetworkopen.2024.58542" target="_blank" rel="noopener noreferrer">Financial Incentives for COVID-19 Vaccination: A Cluster Randomized Clinical Trial</a>
   <span class="meta">Ternovski, J., Jilke, S., Keppeler, F., &amp; Vogel, D. (2025). <em>JAMA Network Open</em>, 8(2), e2458542.</span>
 </div>
 
@@ -190,35 +197,34 @@ following topics:</p>
 </div>
 
 <h2>CV and publication list</h2>
-<p><a class="cv" href="/assets/CV-Publications_Keppeler_09-2026.pdf">Download CV and publications (PDF, September 2026)</a></p>
+<p><a class="cv" href="/assets/CV-Publications_Keppeler_09-2026.pdf">CV and publications (PDF)</a></p>
 
 <h2>Profiles</h2>
 <ul class="links">
-  <li><a href="https://scholar.google.com/citations?user=pA-lT2EAAAAJ&amp;hl=en">Google Scholar</a></li>
-  <li><a href="https://orcid.org/0000-0002-5984-0114">ORCID</a></li>
-  <li><a href="https://pure.au.dk/portal/en/persons/florian-keppeler/">Aarhus University</a></li>
-  <li><a href="https://www.linkedin.com/in/florian-keppeler/">LinkedIn</a></li>
-  <li><a href="https://bsky.app/profile/flokeppeler.bsky.social">Bluesky</a></li>
-  <li><a href="https://www.researchgate.net/profile/Florian-Keppeler">ResearchGate</a></li>
+  <li><a href="https://scholar.google.com/citations?user=pA-lT2EAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+  <li><a href="https://orcid.org/0000-0002-5984-0114" target="_blank" rel="noopener noreferrer">ORCID</a></li>
+  <li><a href="https://pure.au.dk/portal/en/persons/florian-keppeler/" target="_blank" rel="noopener noreferrer">Aarhus University</a></li>
+  <li><a href="https://www.linkedin.com/in/florian-keppeler/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+  <li><a href="https://bsky.app/profile/flokeppeler.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a></li>
+  <li><a href="https://www.researchgate.net/profile/Florian-Keppeler" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
 </ul>
 
 <h2>Contact</h2>
 <address class="contact">
   Department of Political Science, Aarhus University<br>
   Bartholins All&eacute; 7, Building 1340<br>
-  8000 Aarhus C, Denmark<br>
-  <a href="mailto:florian@ps.au.dk">florian@ps.au.dk</a>
+  8000 Aarhus C, Denmark
 </address>
+
+<p><a href="/contact/">Email address and profiles</a></p>
 
 </main>
 
 <footer>
   <ul class="fnav">
     <li><a href="/privacy-policy/">Privacy and legal notice</a></li>
-    <li><a href="mailto:florian@ps.au.dk">florian@ps.au.dk</a></li>
   </ul>
-  <p>&copy; 2026 Florian Keppeler. This site is static: no cookies, no analytics,
-  no third-party embeds, no contact form.</p>
+  <p>&copy; 2026 Florian Keppeler</p>
 </footer>
 
 </div>
