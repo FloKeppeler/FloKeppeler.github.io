@@ -88,6 +88,16 @@ ul.topics li{margin-bottom:6px}
     color:var(--bg); border-radius:4px; font-weight:500; border-bottom:none}
 .cv:hover{opacity:.88; border-bottom:none}
 
+/* address written for humans, not for harvesters */
+.mail{font-variant-numeric:tabular-nums}
+.hint{color:var(--muted); font-size:.86rem}
+
+/* a portrait figure set beside the text, stacking above it on narrow screens */
+figure.side{float:right; width:230px; margin:4px 0 14px 26px}
+figure.side img{width:100%; height:auto; border-radius:6px; display:block}
+figure.side figcaption{margin-top:6px; color:var(--muted); font-size:.8rem; line-height:1.4}
+h2{clear:both}
+
 .photos{display:flex; gap:12px; flex-wrap:wrap; margin:0 0 16px}
 .photos img{flex:1 1 200px; min-width:0; max-width:100%; height:190px;
             object-fit:cover; border-radius:6px}
@@ -103,6 +113,7 @@ footer .fnav{list-style:none; padding:0; margin:0 0 10px; display:flex; flex-wra
   h1{font-size:1.55rem}
   nav ul{gap:2px 16px}
   .photos img{height:150px}
+  figure.side{float:none; width:100%; max-width:280px; margin:4px 0 18px}
 }
 </style>
 </head>
@@ -143,16 +154,16 @@ together with Diana Galos and myself at Aarhus University.</p>
 
 <h2>Advisory &amp; Board Roles</h2>
 
-<h3><a href="https://www.lokalprojekte.de/">Lokalprojekte</a></h3>
+<h3><a href="https://www.lokalprojekte.de/" target="_blank" rel="noopener noreferrer">Lokalprojekte</a></h3>
 <p>Co-founder of this non-profit public service start-up enabling 6-month fellowships for talents
 from the private and non-profit sector to support modernization projects in local governments.
 Co-CEO from 2021 to April 2023.</p>
 
-<h3><a href="https://flexible-arbeit.de/">Stiftung Flexible Arbeitswelt</a></h3>
+<h3><a href="https://flexible-arbeit.de/" target="_blank" rel="noopener noreferrer">Stiftung Flexible Arbeitswelt</a></h3>
 <p>Member of the Advisory Board since 2022. The foundation supports change processes in the world of
 work in exchange with business, science, and politics.</p>
 
-<h3><a href="https://www.pcg-institut.de/">PCG Forschungsgesellschaft</a></h3>
+<h3><a href="https://www.pcg-institut.de/" target="_blank" rel="noopener noreferrer">PCG Forschungsgesellschaft</a></h3>
 <p>Member of the Executive Board from 2017 to 2021. A non-profit start-up offering customized
 compensation benchmarks for executive positions of public enterprises.</p>
 
@@ -160,31 +171,37 @@ compensation benchmarks for executive positions of public enterprises.</p>
 
 <h3>Television &amp; Radio</h3>
 <ul class="press">
-  <li><a href="https://nyheder.tv2.dk/business/2025-08-28-du-kan-blive-moedt-af-en-chatbot-naeste-gang-du-gaar-til-jobsamtale">Du kan blive mødt af en chatbot, næste gang du går til jobsamtale</a><span class="src">TV 2, 2025</span></li>
+  <li><a href="https://nyheder.tv2.dk/business/2025-08-28-du-kan-blive-moedt-af-en-chatbot-naeste-gang-du-gaar-til-jobsamtale" target="_blank" rel="noopener noreferrer">Du kan blive mødt af en chatbot, næste gang du går til jobsamtale</a><span class="src">TV 2, 2025</span></li>
   <li>Udtalelse om rekruttering af topledere til kommuner<span class="src">DR P4, 2025</span></li>
   <li>Wie ein kleines Wort die Impfbereitschaft erhöht hat<span class="src">Hessischer Rundfunk, 2022</span></li>
   <li>Wie erreicht man Impfskeptiker?<span class="src">ZDF WISO, 2021</span></li>
-  <li><a href="https://www.ardmediathek.de/video/tagesthemen/tagesthemen/das-erste/Y3JpZDovL2Rhc2Vyc3RlLmRlL3RhZ2VzdGhlbWVuL2VjNTYwOTNmLTUyNjAtNDE5Ny05NDM2LWYwOWU3OGU3NzFmOQ/">Impfaktionswoche: Wie kommt das Impfangebot bei den Impfunwilligen an?</a><span class="src">ARD Tagesthemen, 2021</span></li>
+  <li><a href="https://www.ardmediathek.de/video/tagesthemen/tagesthemen/das-erste/Y3JpZDovL2Rhc2Vyc3RlLmRlL3RhZ2VzdGhlbWVuL2VjNTYwOTNmLTUyNjAtNDE5Ny05NDM2LWYwOWU3OGU3NzFmOQ/" target="_blank" rel="noopener noreferrer">Impfaktionswoche: Wie kommt das Impfangebot bei den Impfunwilligen an?</a><span class="src">ARD Tagesthemen, 2021</span></li>
 </ul>
 
 <h3>Print &amp; Online</h3>
 <ul class="press">
-  <li><a href="https://www.aka.dk/akademikerliv/artikler/forsker-brugen-af-ai-varktoejer-til-rekruttering-kommer-til-at-stige-stoet/">Forsker: Brugen af AI-værktøjer til rekruttering kommer til at stige støt</a><span class="src">AKA.dk, 2024</span></li>
-  <li><a href="https://www.berlingske.dk/indland/regeringen-vil-forgylde-sygeplejersker-men-det-er-ikke-loennen-der-faar">Regeringen vil forgylde sygeplejersker, men det er ikke lønnen, der får dem til at flygte</a><span class="src">Berlingske, 2023</span></li>
-  <li><a href="https://www.schwaebische.de/regional/oberschwaben/ravensburg/geld-lockt-ravensburger-nicht-zur-corona-impfung-2095766">Geld lockt Ravensburger nicht zur Corona-Impfung</a><span class="src">Schwäbische Zeitung, 2023</span></li>
-  <li><a href="https://background.tagesspiegel.de/smart-city/wie-ki-bei-der-personalsuche-helfen-kann">Wie KI bei der Personalsuche helfen kann</a><span class="src">Tagesspiegel, 2022</span></li>
-  <li><a href="https://www.faz.net/aktuell/politik/inland/corona-impfbereitschaft-steigern-die-ansprache-macht-den-unterschied-17496468.html">Die Ansprache macht den Unterschied – Impfbereitschaft der Deutschen</a><span class="src">Frankfurter Allgemeine Zeitung, 2021</span></li>
-  <li><a href="https://www.tagesspiegel.de/wirtschaft/80-000-euro-praemie-behoerden-wollen-it-fachkraefte-mit-deutlich-mehr-geld-locken/24588500.html">Behörden wollen IT-Fachkräfte mit deutlich mehr Geld locken</a><span class="src">Tagesspiegel, 2019</span></li>
-  <li><a href="https://www.sueddeutsche.de/wirtschaft/studie-top-manager-und-trotzdem-kein-millionaer-1.3941295">Top-Manager und trotzdem kein Millionär</a><span class="src">Süddeutsche Zeitung, 2018</span></li>
-  <li><a href="https://www.faz.net/-gqe-8xj16">Auch beim Staat schaffen es nur wenige Frauen nach oben</a><span class="src">Frankfurter Allgemeine Zeitung, 2017</span></li>
+  <li><a href="https://www.aka.dk/akademikerliv/artikler/forsker-brugen-af-ai-varktoejer-til-rekruttering-kommer-til-at-stige-stoet/" target="_blank" rel="noopener noreferrer">Forsker: Brugen af AI-værktøjer til rekruttering kommer til at stige støt</a><span class="src">AKA.dk, 2024</span></li>
+  <li><a href="https://www.berlingske.dk/indland/regeringen-vil-forgylde-sygeplejersker-men-det-er-ikke-loennen-der-faar" target="_blank" rel="noopener noreferrer">Regeringen vil forgylde sygeplejersker, men det er ikke lønnen, der får dem til at flygte</a><span class="src">Berlingske, 2023</span></li>
+  <li><a href="https://www.schwaebische.de/regional/oberschwaben/ravensburg/geld-lockt-ravensburger-nicht-zur-corona-impfung-2095766" target="_blank" rel="noopener noreferrer">Geld lockt Ravensburger nicht zur Corona-Impfung</a><span class="src">Schwäbische Zeitung, 2023</span></li>
+  <li><a href="https://background.tagesspiegel.de/smart-city/wie-ki-bei-der-personalsuche-helfen-kann" target="_blank" rel="noopener noreferrer">Wie KI bei der Personalsuche helfen kann</a><span class="src">Tagesspiegel, 2022</span></li>
+  <li><a href="https://www.faz.net/aktuell/politik/inland/corona-impfbereitschaft-steigern-die-ansprache-macht-den-unterschied-17496468.html" target="_blank" rel="noopener noreferrer">Die Ansprache macht den Unterschied – Impfbereitschaft der Deutschen</a><span class="src">Frankfurter Allgemeine Zeitung, 2021</span></li>
+  <li><a href="https://www.tagesspiegel.de/wirtschaft/80-000-euro-praemie-behoerden-wollen-it-fachkraefte-mit-deutlich-mehr-geld-locken/24588500.html" target="_blank" rel="noopener noreferrer">Behörden wollen IT-Fachkräfte mit deutlich mehr Geld locken</a><span class="src">Tagesspiegel, 2019</span></li>
+  <li><a href="https://www.sueddeutsche.de/wirtschaft/studie-top-manager-und-trotzdem-kein-millionaer-1.3941295" target="_blank" rel="noopener noreferrer">Top-Manager und trotzdem kein Millionär</a><span class="src">Süddeutsche Zeitung, 2018</span></li>
+  <li><a href="https://www.faz.net/-gqe-8xj16" target="_blank" rel="noopener noreferrer">Auch beim Staat schaffen es nur wenige Frauen nach oben</a><span class="src">Frankfurter Allgemeine Zeitung, 2017</span></li>
 </ul>
 
 <h3>Podcasts</h3>
 <ul class="press">
-  <li><a href="https://www.behoerden-spiegel.de/2023/01/10/neues-jahr-alte-probleme/">Personalmarketing im öffentlichen Sektor</a><span class="src">Behördenspiegel Public Sector Insider, 2023</span></li>
+  <li><a href="https://www.behoerden-spiegel.de/2023/01/10/neues-jahr-alte-probleme/" target="_blank" rel="noopener noreferrer">Personalmarketing im öffentlichen Sektor</a><span class="src">Behördenspiegel Public Sector Insider, 2023</span></li>
 </ul>
 
 <h2>Speaking &amp; Workshops</h2>
+
+<figure class="side">
+  <img src="/assets/keppeler-speaking-2026.jpg" alt="Florian Keppeler at a King Frederik Center event"
+       width="460" height="613" loading="lazy">
+  <figcaption>Photo: Jens Hartmann, Aarhus University</figcaption>
+</figure>
 
 <p>I regularly speak at practitioner conferences, government agencies, and academic institutions
 across Denmark, Germany, and internationally. I present in English, German, and Danish. For speaking
@@ -215,10 +232,8 @@ of leaders.</p>
 <footer>
   <ul class="fnav">
     <li><a href="/privacy-policy/">Privacy and legal notice</a></li>
-    <li><a href="mailto:florian@ps.au.dk">florian@ps.au.dk</a></li>
   </ul>
-  <p>&copy; 2026 Florian Keppeler. This site is static: no cookies, no analytics,
-  no third-party embeds, no contact form.</p>
+  <p>&copy; 2026 Florian Keppeler</p>
 </footer>
 
 </div>
