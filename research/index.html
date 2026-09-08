@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Florian Keppeler</title>
+<meta name="description" content="Publications and research on recruiting and retaining the public workforce, artificial intelligence in government, and citizen motivation to contribute to public goods.">
+<meta name="author" content="Florian Keppeler">
+<link rel="canonical" href="https://florian-keppeler.com/research/">
+<meta property="og:title" content="Research — Florian Keppeler">
+<meta property="og:description" content="Publications and research on recruiting and retaining the public workforce, artificial intelligence in government, and citizen motivation to contribute to public goods.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://florian-keppeler.com/research/">
+<style>
+:root{
+  --bg:#ffffff; --fg:#1a1a1a; --muted:#5b5b5b; --line:#e2e2e2;
+  --accent:#00505c; --accent-soft:#f2f6f7; --card:#fafafa;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15181a; --fg:#e9e9e7; --muted:#a5a9ab; --line:#2b3033;
+    --accent:#7fc4cf; --accent-soft:#1b2225; --card:#1a1e20;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.wrap{max-width:760px; margin:0 auto; padding:0 24px 72px}
+a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent}
+a:hover{border-bottom-color:currentColor}
+.skip{position:absolute; left:-9999px}
+.skip:focus{position:static; display:inline-block; margin:8px 0}
+
+/* masthead and navigation */
+.top{display:flex; gap:20px 28px; align-items:baseline; flex-wrap:wrap;
+     padding:28px 0 0; border-bottom:1px solid var(--line)}
+.brand{font-size:1.05rem; font-weight:600; color:var(--fg); border-bottom:none; letter-spacing:-.01em}
+.brand:hover{color:var(--accent)}
+nav{margin-left:auto}
+nav ul{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:4px 22px}
+nav a{color:var(--muted); font-size:.94rem; padding-bottom:10px; display:inline-block;
+      border-bottom:2px solid transparent}
+nav a:hover{color:var(--fg)}
+nav a[aria-current="page"]{color:var(--fg); border-bottom-color:var(--accent)}
+
+header{padding:44px 0 8px; display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap}
+.portrait{width:132px; height:132px; border-radius:50%; object-fit:cover; object-position:50% 22%; flex:none}
+.ident{flex:1 1 320px; min-width:260px}
+h1{font-size:1.9rem; line-height:1.2; margin:0 0 6px; letter-spacing:-.01em}
+.page-title{margin:40px 0 20px}
+.role{color:var(--muted); margin:0 0 4px}
+.role strong{color:var(--fg); font-weight:600}
+.lead{font-size:1.06rem}
+
+h2{font-size:.82rem; text-transform:uppercase; letter-spacing:.09em; color:var(--muted);
+   margin:44px 0 14px; font-weight:600}
+h3{font-size:1.02rem; margin:26px 0 6px; font-weight:600}
+h4{font-size:.95rem; margin:22px 0 8px; font-weight:600; color:var(--muted)}
+p{margin:0 0 16px}
+
+ul.topics{margin:0 0 16px; padding-left:20px}
+ul.topics li{margin-bottom:6px}
+
+.item{padding:16px 0; border-top:1px solid var(--line)}
+.item:last-child{border-bottom:1px solid var(--line)}
+.item .t{display:block; margin-bottom:4px}
+.item .meta{color:var(--muted); font-size:.92rem}
+.item .extra{display:block; margin-top:5px; font-size:.88rem}
+
+.proj{padding:16px 18px; background:var(--card); border:1px solid var(--line);
+      border-radius:6px; margin-bottom:12px}
+.proj .h{display:flex; gap:10px; align-items:baseline; flex-wrap:wrap; margin-bottom:6px}
+.proj .name{font-weight:600}
+.proj .yrs{color:var(--muted); font-size:.9rem}
+.proj p{margin:0; font-size:.95rem; color:var(--muted)}
+
+.press{list-style:none; margin:0 0 8px; padding:0}
+.press li{padding:11px 0; border-top:1px solid var(--line)}
+.press li:last-child{border-bottom:1px solid var(--line)}
+.press .src{display:block; color:var(--muted); font-size:.88rem; margin-top:2px}
+
+.links{list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:8px 20px}
+.contact{font-style:normal; color:var(--muted)}
+.cv{display:inline-block; margin:4px 0 0; padding:9px 16px; background:var(--accent);
+    color:var(--bg); border-radius:4px; font-weight:500; border-bottom:none}
+.cv:hover{opacity:.88; border-bottom:none}
+
+.photos{display:flex; gap:12px; flex-wrap:wrap; margin:0 0 16px}
+.photos img{flex:1 1 200px; min-width:0; max-width:100%; height:190px;
+            object-fit:cover; border-radius:6px}
+
+footer{margin-top:56px; padding-top:20px; border-top:1px solid var(--line);
+       color:var(--muted); font-size:.86rem}
+footer p{margin:0 0 8px}
+footer .fnav{list-style:none; padding:0; margin:0 0 10px; display:flex; flex-wrap:wrap; gap:6px 18px}
+
+@media (max-width:560px){
+  header{padding-top:28px; gap:18px}
+  .portrait{width:96px; height:96px}
+  h1{font-size:1.55rem}
+  nav ul{gap:2px 16px}
+  .photos img{height:150px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<div class="top">
+  <a class="brand" href="/">Florian Keppeler</a>
+  <nav aria-label="Main">
+  <ul>
+    <li><a href="/research/" aria-current="page">Research</a></li>
+    <li><a href="/courses/">Courses</a></li>
+    <li><a href="/engagement/">Engagement</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  </nav>
+</div>
+
+<main id="main">
+
+<h1 class="page-title">Research</h1>
+
+<p class="lead">My research focuses broadly on public administration, policy, and human resource
+management in the public sector. My research has been published in various academic journals
+including the Journal of Public Administration Research and Theory, Public Administration Review,
+Public Management Review, Behavioural Public Policy, Nature Scientific Reports, JAMA Network Open,
+and others. It has also been cited in policy documents (e.g.,
+<a href="https://publications.jrc.ec.europa.eu/repository/bitstream/JRC133066/JRC133066_01.pdf">Joint Research Centre of the European Commission</a>,
+<a href="https://doi.org/10.1787/ab9ebe85-en">OECD</a>,
+<a href="https://openknowledge.worldbank.org/server/api/core/bitstreams/741ce1b4-b24c-5297-ad29-a9a556c7fc9a/content">World Bank</a>,
+<a href="https://www.ism.dk/publikationer-sundhed/2023/september/robusthedskommissionens-anbefalinger">Danish Government Commission on Healthcare</a>)
+and highlighted in both German and Danish media outlets including prime time TV news (e.g., ARD, ZDF)
+and national newspapers (e.g., S&uuml;ddeutsche, Zeit, Berlingske, Jyllands-Posten).</p>
+
+<p>I am particularly interested in the following topics:</p>
+
+<ul class="topics">
+  <li>Recruiting, selecting, and retaining the public workforce</li>
+  <li>The role of artificial intelligence (AI) in public policy and government</li>
+  <li>The motivation of citizens to contribute to public goods</li>
+</ul>
+
+<p>The list below is complete as of June 2026. See also my
+<a href="https://scholar.google.com/citations?user=pA-lT2EAAAAJ&amp;hl=en">Google Scholar profile</a>.</p>
+
+<h2>Peer-reviewed publications</h2>
+
+<h3>Recruiting, selecting, and retaining the public workforce</h3>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.1111/padm.70053">How Do Strikes and Lockouts Affect Applications to Danish Public Service Professional Education Programs? A Synthetic Control Analysis</a>
+  <span class="meta">Heide, C., &amp; Keppeler, F. (2026). <em>Public Administration</em>, Early view, article padm.70053.</span>
+  <span class="extra"><a href="https://doi.org/10.1111/padm.70053">doi.org/10.1111/padm.70053</a></span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.18261/nsf.15.1.6">Attractive Job Advertisements? Potential Discrepancies between Managers’ Predictions and Preferences of Nursing Recruits</a>
+  <span class="meta">Keppeler, F., Pedersen, A. T., Noer, V. R., &amp; Jacobsen, C. B. (2025). <em>Nordisk Sygeplejeforskning</em>, 15(1), 1–16.</span>
+  <span class="extra"><a href="https://doi.org/10.18261/nsf.15.1.6">doi.org/10.18261/nsf.15.1.6</a></span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.1111/puar.13733">Facing the Human Capital Crisis: A Systematic Review and Research Agenda on Recruitment and Selection in the Public Sector</a>
+  <span class="meta">Jakobsen, M., Løkke, A.-K., &amp; Keppeler, F. (2023). <em>Public Administration Review</em>, 83(6), 1635–1648.</span>
+  <span class="extra"><a href="https://doi.org/10.1111/puar.13733">doi.org/10.1111/puar.13733</a></span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.1177/0734371X221121050">Employer Value Propositions for Different Target Groups and Organizational Types in the Public Sector: Theory and Evidence from Field Experiments</a>
+  <span class="meta">Keppeler, F., &amp; Papenfuß, U. (2023). <em>Review of Public Personnel Administration</em>, 43(4), 701–726.</span>
+  <span class="extra"><a href="https://doi.org/10.1177/0734371X221121050">doi.org/10.1177/0734371X221121050</a> &middot; <a href="https://osf.io/azex6/">Postprint</a></span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.1111/puar.13324">Employer Branding and Recruitment: Social Media Field Experiments Targeting Future Public Employees</a>
+  <span class="meta">Keppeler, F., &amp; Papenfuß, U. (2021). <em>Public Administration Review</em>, 81(4), 763–775.</span>
+  <span class="extra"><a href="https://doi.org/10.1111/puar.13324">doi.org/10.1111/puar.13324</a></span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.5771/0344-9777-2017-4-256">Arbeitgeberattraktivität öffentlicher Unternehmen aus Sicht des Führungskräftenachwuchses der Verwaltung</a>
+  <span class="meta">Vogel, R., Keppeler, F., &amp; Papenfuß, U. (2017). <em>Zeitschrift für öffentliche und gemeinwirtschaftliche Unternehmen</em>, 40(4), 256–282.</span>
+  <span class="extra"><a href="https://doi.org/10.5771/0344-9777-2017-4-256">doi.org/10.5771/0344-9777-2017-4-256</a></span>
+</div>
+
+<h3>The role of artificial intelligence (AI) in public policy and government</h3>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.1093/jopart/muaf009">How Ensembling AI and Public Managers Improves Decision-Making</a>
+  <span class="meta">Keppeler, F., Borchert, J., Pedersen, M. J., &amp; Lehmann Nielsen, V. (2025). <em>Journal of Public Administration Research and Theory</em>, 35(3), 261–276.</span>
+  <span class="extra"><a href="https://doi.org/10.1093/jopart/muaf009">doi.org/10.1093/jopart/muaf009</a> &middot; <a href="https://doi.org/10.31219/osf.io/2yf6r">Postprint</a></span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.1093/jopart/muad009">No Thanks, Dear AI! Understanding the Effects of Disclosure and Deployment of Artificial Intelligence in Public Sector Recruitment</a>
+  <span class="meta">Keppeler, F. (2024). <em>Journal of Public Administration Research and Theory</em>, 34(1), 39–52.</span>
+  <span class="extra"><a href="https://doi.org/10.1093/jopart/muad009">doi.org/10.1093/jopart/muad009</a> &middot; <a href="/assets/Keppeler_NoThanksDearAI_Postprint.pdf">Postprint</a></span>
+</div>
+
+<h3>The motivation of citizens to contribute to public goods</h3>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.1001/jamanetworkopen.2024.58542">Financial Incentives for COVID-19 Vaccination: A Cluster Randomized Clinical Trial</a>
+  <span class="meta">Ternovski, J., Jilke, S., Keppeler, F., &amp; Vogel, D. (2025). <em>JAMA Network Open</em>, 8(2), e2458542.</span>
+  <span class="extra"><a href="https://doi.org/10.1001/jamanetworkopen.2024.58542">doi.org/10.1001/jamanetworkopen.2024.58542</a></span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.1017/bpp.2022.16">Increasing COVID-19 Vaccination Intentions: A Field Experiment on Psychological Ownership</a>
+  <span class="meta">Keppeler, F., Sievert, M., &amp; Jilke, S. (2025). <em>Behavioural Public Policy</em>, 9(1), 16–35.</span>
+  <span class="extra"><a href="https://doi.org/10.1017/bpp.2022.16">doi.org/10.1017/bpp.2022.16</a></span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.1038/s41598-024-51590-x">Policy Makers Believe Money Motivates More Than It Does</a>
+  <span class="meta">Jilke, S., Keppeler, F., Ternovski, J., Vogel, D., &amp; Yoeli, E. (2024). <em>Scientific Reports</em>, 14(1), 1901.</span>
+  <span class="extra"><a href="https://doi.org/10.1038/s41598-024-51590-x">doi.org/10.1038/s41598-024-51590-x</a></span>
+</div>
+
+<h3>Public administration and public management</h3>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.1080/14719037.2021.1942531">Understanding Vertical Pay Dispersion in the Public Sector: The Role of Publicness for Manager-to-Worker Pay Ratios and Interdisciplinary Agenda for Future Research</a>
+  <span class="meta">Keppeler, F., &amp; Papenfuß, U. (2022). <em>Public Management Review</em>, 24(11), 1846–1871.</span>
+  <span class="extra"><a href="https://doi.org/10.1080/14719037.2021.1942531">doi.org/10.1080/14719037.2021.1942531</a></span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.1111/padm.12828">CO-DESIGN-ing a More Context-Based, Pluralistic, and Participatory Future for Public Administration</a>
+  <span class="meta">Schwoerer, K., Keppeler, F., Mussagulova, A., &amp; Puello, S. (2022). <em>Public Administration</em>, 100(1), 72–97.</span>
+  <span class="extra"><a href="https://doi.org/10.1111/padm.12828">doi.org/10.1111/padm.12828</a></span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.1080/14719037.2020.1740300">Does Performance-Related Pay and Public Service Motivation Research Treat State-Owned Enterprises Like a Neglected Cinderella? A Systematic Literature Review and Agenda for Future Research on Performance Effects</a>
+  <span class="meta">Papenfuß, U., &amp; Keppeler, F. (2020). <em>Public Management Review</em>, 22(7), 1119–1145.</span>
+  <span class="extra"><a href="https://doi.org/10.1080/14719037.2020.1740300">doi.org/10.1080/14719037.2020.1740300</a></span>
+</div>
+
+<h2>Working papers</h2>
+
+<div class="item">
+  <span class="t">Noise in Administrative Decision-Making: Public Administration’s Unseen Error and AI’s Role in Enhancing Personnel Selection Consistency</span>
+  <span class="meta">Pedersen, M. J., Bendtsen, K., &amp; Keppeler, F. (2026). Working paper.</span>
+</div>
+
+<div class="item">
+  <span class="t">‘Coming out’ to Public Servants Has Uneven Consequences across Identities and Contexts</span>
+  <span class="meta">Van Roekel, H., Arnfred, J., Szydlowski, G., Keppeler, F., &amp; Tummers, L. (2026). Working paper.</span>
+</div>
+
+<div class="item">
+  <span class="t">Do Healthcare Professions End at National Borders? A Conjoint Experiment on Reducing Nativity Discrimination</span>
+  <span class="meta">Galos, D., Jacobsen, C. B., Keppeler, F., &amp; Pedersen, M. J. (2026). Working paper.</span>
+</div>
+
+<div class="item">
+  <span class="t">Precision Public Administration</span>
+  <span class="meta">Keppeler, F., &amp; Feeney, M. (2026). Working paper.</span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://osf.io/wzva9">The SIMC Framework: Aligning Academic Research and Government Practice in Field Experiments</a>
+  <span class="meta">Kim, J. Y., &amp; Keppeler, F. (2026). Working paper.</span>
+  <span class="extra"><a href="https://osf.io/wzva9">Preprint</a></span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.31219/osf.io/6pwxe">What Works in International Health Worker Recruitment: A Megastudy</a>
+  <span class="meta">Keppeler, F., Linos, E., Sciepura, B., Bachmann, R., Lacey, K., &amp; Jacobsen, C. B. (2026). Working paper.</span>
+  <span class="extra"><a href="https://doi.org/10.31219/osf.io/6pwxe">doi.org/10.31219/osf.io/6pwxe</a></span>
+</div>
+
+<div class="item">
+  <span class="t">Beyond Borders, Within Workplaces: A Systematic Literature Review on Inclusion of International Employees</span>
+  <span class="meta">Stanišić, I., van Luttervelt, M., &amp; Keppeler, F. (2026). Working paper.</span>
+</div>
+
+<div class="item">
+  <span class="t">How Organizational Practices Fostering Employee Green Behavior Can Contribute to the Retention of Public Employees</span>
+  <span class="meta">Grøn, A., Keppeler, F., &amp; Jakobsen, M. L. (2025). Working paper.</span>
+</div>
+
+<div class="item">
+  <span class="t">Decision Hygiene Is More Effective Than Blinding in Preventing Discrimination in Hiring</span>
+  <span class="meta">Jakobsen, M., Keppeler, F., Gøtzsche-Astrup, O., &amp; Villadsen, A. (2025). Working paper.</span>
+</div>
+
+<div class="item">
+  <span class="t">Entangled Imbalances? Disentangling Gender Disparities across Phases of Hiring in Gender-Segregated and Gender-Balanced Industries</span>
+  <span class="meta">Jakobsen, M., Gøtzsche-Astrup, O., Keppeler, F., &amp; Villadsen, A. (2025). Working paper.</span>
+</div>
+
+<h2>Danish publications</h2>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.17605/OSF.IO/3W6ZX">Den attraktive arbejdsplads: En spørgeskemaundersøgelse af danske kommuner</a>
+  <span class="meta">Jørgensen, M., Keppeler, F., Bertelsen, A. M. H., Kjær, K. S., Grøn, A. B., &amp; Jakobsen, M. L. (2024). <em>Komponent and the Crown Prince Frederik Center for Public Leadership, Aarhus University</em>.</span>
+  <span class="extra"><a href="https://doi.org/10.17605/OSF.IO/3W6ZX">doi.org/10.17605/OSF.IO/3W6ZX</a></span>
+</div>
+
+<div class="item">
+  <span class="t">Rekruttering, udvælgelse og tilknytning af personale i fremtidens sundhedsvæsen</span>
+  <span class="meta">Keppeler, F., Axelsen, B. O., &amp; Jacobsen, C. B. (2024). <em>In M. Bech, P. Jørgensen, &amp; S. B. Rasmussen (Eds.), Hvordan leder vi fremtidens sundhedsvæsen? FADL’s Forlag, Copenhagen, 160–173</em>.</span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.17605/OSF.IO/J7G9S">Det ved vi om rekruttering: White paper om evidensbaserede strategier til rekruttering i den offentlige sektor</a>
+  <span class="meta">Keppeler, F., Højberg, N., Pedersen, A. T., &amp; Jacobsen, C. B. (2023). <em>Crown Prince Frederik Center for Public Leadership, Aarhus University. Cited by the Danish Government Commission on Robustness in the Healthcare Sector</em>.</span>
+  <span class="extra"><a href="https://doi.org/10.17605/OSF.IO/J7G9S">doi.org/10.17605/OSF.IO/J7G9S</a></span>
+</div>
+
+<div class="item">
+  <span class="t">Kronik: Udlandet skal komme den danske sundhedssektor til undsætning</span>
+  <span class="meta">Jacobsen, C. B., Keppeler, F., Højberg, N., &amp; Bech, M. (2023). <em>Jyllands-Posten</em>.</span>
+</div>
+
+<h2>German publications</h2>
+
+<div class="item">
+  <span class="t">Wie Verwaltung durch Zusammenarbeit mit Startups die digitale Transformation gestalten kann: Ein vergleichender Blick auf Deutschland und Dänemark</span>
+  <span class="meta">Prokop-Scheer, C., &amp; Keppeler, F. (2025). <em>In F.-R. Habbel, D. Robers, &amp; C. Meineke (Eds.), GOV-TECH Start-up und Verwaltung. Springer, Wiesbaden. Forthcoming</em>.</span>
+</div>
+
+<div class="item">
+  <span class="t">Wie Europa zur Lösung beitragen könnte</span>
+  <span class="meta">Keppeler, F. (2024). <em>In Lünendonk (Ed.), Arbeitsmarktintegration ausländischer Fach- und Arbeitskräfte, Mindelheim</em>.</span>
+</div>
+
+<div class="item">
+  <span class="t">Ausgewählte Fragen und Befunde zur künstlichen Intelligenz im Personalmanagement</span>
+  <span class="meta">Keppeler, F. (2023). <em>Stiftung Flexible Arbeitswelt (Ed.), Arbeitsmarkt und zur Entwicklung der Arbeitswelt, Berlin. Reprinted in D. Alt, A. Haller, &amp; M. Kaiser (Eds.), Digitalisierung in Gemeinden: Praxis-Leitfaden, KSV Medien, Wiesbaden, 143–149</em>.</span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.13140/RG.2.2.11010.35528">Erfolgsfaktoren für die KI-gestützte Personalgewinnung von Fach- und Führungskräften bei öffentlichen Arbeitgebern (KISS-Studie)</a>
+  <span class="meta">Keppeler, F., &amp; Borchert, J. (2022). <em>Chair of Public Management &amp; Public Policy, Zeppelin University, and Verband kommunaler Unternehmen, Landesgruppe Baden-Württemberg, Friedrichshafen</em>.</span>
+  <span class="extra"><a href="https://doi.org/10.13140/RG.2.2.11010.35528">doi.org/10.13140/RG.2.2.11010.35528</a></span>
+</div>
+
+<div class="item">
+  <a class="t" href="https://doi.org/10.1007/978-3-658-35675-0_11">Neue Wege bei der Personalgewinnung und -entwicklung der kommunalen Arbeitgeber als Innovationsmotor: Public Entrepreneurship</a>
+  <span class="meta">Keppeler, F. (2022). <em>In D. Robers, J. Stember, &amp; F.-R. Habbel (Eds.), Die innovative Kommune. Springer, Wiesbaden, 155–171</em>.</span>
+  <span class="extra"><a href="https://doi.org/10.1007/978-3-658-35675-0_11">doi.org/10.1007/978-3-658-35675-0_11</a></span>
+</div>
+
+<div class="item">
+  <span class="t">Flexible Arbeit im Miteinander zwischen Praxis und Wissenschaft gestalten: Gesellschaftspolitische Anforderungen, Projekte, Herausforderungen</span>
+  <span class="meta">Hetz, T., &amp; Keppeler, F. (2021). <em>In M. Dohm, A. Große-Jäger, K. Rüffler, &amp; J. Staff (Eds.), Expedition: Werte, Springer, Wiesbaden</em>.</span>
+</div>
+
+<div class="item">
+  <span class="t">Personalgewinnung kommunaler Unternehmen: Feldexperimentelle Ergebnisse und Handlungsoptionen für ein evidenzbasiertes Employer Branding</span>
+  <span class="meta">Keppeler, F., &amp; Papenfuß, U. (2020). <em>StArk-Forschungsprojekt, Friedrichshafen</em>.</span>
+</div>
+
+<h2>CV and publication list</h2>
+<p><a class="cv" href="/assets/CV-Publications_Keppeler_06-2026.pdf">Download CV and publications (PDF, June 2026)</a></p>
+
+</main>
+
+<footer>
+  <ul class="fnav">
+    <li><a href="/privacy-policy/">Privacy and legal notice</a></li>
+    <li><a href="mailto:florian@ps.au.dk">florian@ps.au.dk</a></li>
+  </ul>
+  <p>&copy; 2026 Florian Keppeler. This site is static: no cookies, no analytics,
+  no third-party embeds, no contact form.</p>
+</footer>
+
+</div>
+</body>
+</html>
