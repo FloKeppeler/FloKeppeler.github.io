@@ -1,0 +1,86 @@
+{
+ "raadhus.jpg": {
+  "file": "Rådhus Aarhus 2022-08-16 02.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:R%C3%A5dhus_Aarhus_2022-08-16_02.jpg",
+  "license": "CC0",
+  "licenseurl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "artist": "Leonhard Lenz",
+  "bytes": 702894,
+  "sha256": "41e2974a08b6117c"
+ },
+ "aarhus-oe-2018.jpg": {
+  "file": "Aarhus Ø (Havneholmen).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Aarhus_%C3%98_(Havneholmen).jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "artist": "RhinoMind",
+  "bytes": 634415,
+  "sha256": "d57317d0e25a666d"
+ },
+ "langenaes.jpg": {
+  "file": "Langenaes plejehjem.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Langenaes_plejehjem.jpg",
+  "license": "Public domain",
+  "licenseurl": "",
+  "artist": "Asp at da.wikipedia",
+  "bytes": 141418,
+  "sha256": "88a21962d355ef69"
+ },
+ "raadhusur.jpg": {
+  "file": "Tower clock of Aarhus City Hall 2024.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tower_clock_of_Aarhus_City_Hall_2024.jpg",
+  "license": "CC0",
+  "licenseurl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "artist": "Flibust1er",
+  "bytes": 228510,
+  "sha256": "2739886f542e1a2c"
+ },
+ "byraadssal.jpg": {
+  "file": "Council Chamber Aarhus City Hall Byrådssalen Rådhuset Denmark 01.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Council_Chamber_Aarhus_City_Hall_Byr%C3%A5dssalen_R%C3%A5dhuset_Denmark_01.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "artist": "Ciara Ní Riain",
+  "desc": "Byrådssalen – the council chamber (plenary chamber) at Aarhus City Hall (Rådhuset) Denmark.  A  listed building built between 1938 and 1941. Chamber pictured in",
+  "bytes": 237361
+ },
+ "plejecenter.jpg": {
+  "file": "Plejecenter Sølund 01.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Plejecenter_S%C3%B8lund_01.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "artist": "Leif Jørgensen",
+  "desc": "The nursing home Plejecenter Sølund at Sortedam Dossering in Nørrebro in Copenhagen. The nursing home has address at Ryesgade.",
+  "bytes": 372204
+ },
+ "lyd/jingle.mp3": {
+  "page": "https://freesound.org/people/code_box/sounds/670625/",
+  "title": "Freesound - Mini News Jingle by code_box",
+  "license": "CC0",
+  "bytes": 32204
+ },
+ "lyd/kontor.mp3": {
+  "page": "https://freesound.org/people/DiArchangeli/sounds/108695/",
+  "title": "Freesound - Office Ambience.wav by DiArchangeli",
+  "license": "CC0",
+  "bytes": 84476
+ },
+ "lyd/gang.mp3": {
+  "page": "https://freesound.org/people/tferrino/sounds/618354/",
+  "title": "Freesound - HOSPITAL - LONG CORRIDOR - ATMO / AMB (01) by tferrino",
+  "license": "CC0",
+  "bytes": 84476
+ },
+ "lyd/tik.mp3": {
+  "page": "",
+  "title": "Genereret til spillet",
+  "license": "Eget materiale",
+  "bytes": 6652
+ },
+ "lyd/summen.mp3": {
+  "page": "",
+  "title": "Genereret til spillet",
+  "license": "Eget materiale",
+  "bytes": 9003
+ }
+}
