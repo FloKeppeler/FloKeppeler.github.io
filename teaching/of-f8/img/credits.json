@@ -26,6 +26,15 @@
   "bytes": 141418,
   "sha256": "88a21962d355ef69"
  },
+ "kontor.jpg": {
+  "file": "Minimalist meeting room (Unsplash).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Minimalist_meeting_room_(Unsplash).jpg",
+  "source": "https://unsplash.com/photos/BlEfS8-wzHM",
+  "license": "CC0",
+  "licenseurl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "artist": "Breather",
+  "note": "Cropped to 1400x588; replaces langenaes.jpg on the planning page (langenaes.jpg no longer used)"
+ },
  "raadhusur.jpg": {
   "file": "Tower clock of Aarhus City Hall 2024.jpg",
   "page": "https://commons.wikimedia.org/wiki/File:Tower_clock_of_Aarhus_City_Hall_2024.jpg",
