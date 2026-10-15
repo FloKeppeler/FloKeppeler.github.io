@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Personaleplanen | Offentlig Forvaltning</title>
+<title>Flere hænder | Offentlig Forvaltning</title>
 <style>
 :root{
   --bg:#f6f4ef; --panel:#ffffff; --ink:#1d2329; --muted:#5b6570; --line:#dcd7cc;
@@ -246,7 +246,7 @@ input[type=text]{min-height:44px}
 </head>
 <body>
 <header class="top">
-  <div class="brand">Personaleplanen <small>Offentlig Forvaltning, F8: De offentligt ansatte</small></div>
+  <div class="brand">Flere hænder <small>Offentlig Forvaltning, F8: De offentligt ansatte</small></div>
   <nav class="tabs" aria-label="Faner">
     <button id="tab-spil" aria-selected="true">Spillet</button>
     <button id="tab-forskning" aria-selected="false" class="locked">Forskningen</button>
@@ -263,7 +263,7 @@ input[type=text]{min-height:44px}
 <!-- ============ BRIEF ============ -->
 <section id="v-brief">
   <figure class="pic hero"><div class="heroimg"><img src="img/raadhus.jpg" alt="Aarhus Rådhus med tårnuret, set fra Rådhuspladsen en sommeraften">
-    <div class="over"><h1>Personaleplanen</h1><p class="sub">En ledelsessimulator om ældreplejen i Aarhus Kommune</p></div></div>
+    <div class="over"><h1>Flere hænder</h1><p class="sub">En ledelsessimulator om ældreplejen i Aarhus Kommune</p></div></div>
     <figcaption>Aarhus Rådhus. Foto: Leonhard Lenz, 2022, <a href="https://commons.wikimedia.org/wiki/File:R%C3%A5dhus_Aarhus_2022-08-16_02.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC0.</figcaption></figure>
 
   <div class="card howto">
@@ -466,7 +466,7 @@ input[type=text]{min-height:44px}
 <!-- ============ OM ============ -->
 <section id="v-om" class="hidden">
   <h1>Om spillet</h1>
-  <p>Personaleplanen er lavet til kurset Offentlig Forvaltning (BA, Statskundskab, Aarhus Universitet), efterår 2026, forelæsning 8 om de offentligt ansatte: motivation, ledelse og frontlinjeadfærd. Spillet er inspireret af John Holbeins klasseøvelse <a href="https://johnholbein.org/teaching-activities/presidents-budget/" target="_blank" rel="noopener">"The President's Budget"</a>: at lægge en plan i en andens navn, møde reaktionen dagen derpå og til sidst skulle samle et flertal. Tak til John Holbein for idéen og for at dele øvelsen åbent. Indhold og kode i Personaleplanen er nye.</p>
+  <p>Spillet Flere hænder er lavet til kurset Offentlig Forvaltning (BA, Statskundskab, Aarhus Universitet), efterår 2026, forelæsning 8 om de offentligt ansatte: motivation, ledelse og frontlinjeadfærd. Spillet er inspireret af John Holbeins klasseøvelse <a href="https://johnholbein.org/teaching-activities/presidents-budget/" target="_blank" rel="noopener">"The President's Budget"</a>: at lægge en plan i en andens navn, møde reaktionen dagen derpå og til sidst skulle samle et flertal. Tak til John Holbein for idéen og for at dele øvelsen åbent. Indhold og kode i Flere hænder er nye.</p>
   <p>Spillet sender intet nogen steder hen. Holdnavnet og lydindstillingen huskes i jeres browser, og spillets tilstand gemmes i fanen, så en genindlæsning ikke sletter jeres plan. Grafen over sygefravær henter de nyeste tal direkte fra Danmarks Statistik, når den kan.</p>
   <p>Aarhus Kommune er rammen, fordi casen er virkelig og lokal. Memoet, planerne, reaktionerne, nyhedsindslagene, aktørerne, udtalelserne og afstemningerne i spillet er fiktive og siger intet om, hvad kommunens politikere, ledere eller medarbejdere mener eller har gjort. Ø-NYT og Lokalavisen findes ikke.</p>
   <h3>Billeder</h3>
@@ -509,7 +509,7 @@ input[type=text]{min-height:44px}
 <audio id="a-tik" src="lyd/tik.mp3" preload="none"></audio>
 <audio id="a-kontor" src="lyd/kontor.mp3" preload="none"></audio>
 <audio id="a-gang" src="lyd/gang.mp3" preload="none"></audio>
-<footer>Personaleplanen. Undervisningsspil, Offentlig Forvaltning E2026. Fiktive reaktioner, virkelig case.</footer>
+<footer>Flere hænder. Undervisningsspil, Offentlig Forvaltning E2026. Fiktive reaktioner, virkelig case.</footer>
 
 <script>
 "use strict";
@@ -1923,7 +1923,7 @@ function renderReceipt(){
     ["MED-hovedudvalget", esc(ms.t) + ", " + esc(ms.rec)],
     ["Byrådet", `${V.total} af 31: <span class="${V.pass ? "pass" : "fail"}">${V.pass ? "VIDEREFØRT" : "FALDET"}</span>`]
   ];
-  $("#receipt").innerHTML = `<dl>${rows.map(r => `<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join("")}</dl><p class="stamp">Personaleplanen · F8 Offentlig Forvaltning E2026 · ${esc(new Date().toLocaleString("da-DK"))}</p>`;
+  $("#receipt").innerHTML = `<dl>${rows.map(r => `<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join("")}</dl><p class="stamp">Flere hænder · F8 Offentlig Forvaltning E2026 · ${esc(new Date().toLocaleString("da-DK"))}</p>`;
 }
 
 /* ---------- forskning ---------- */
