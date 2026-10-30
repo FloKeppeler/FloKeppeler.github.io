@@ -412,6 +412,8 @@ input[type=text]{min-height:44px}
       <li>Med en indrømmelse giver en besked, der rammer de fleste punkter, typisk de fleste af aktørens stemmer. Rammer den kun et eller to punkter, giver den færre.</li>
       <li>Uden indrømmelse giver selv en god besked sandsynligvis kun en mindre del af stemmerne.</li>
       <li>Den samme besked til flere aktører tæller mindre. Skriv til den enkelte.</li>
+      <li>Kun hele sætninger tæller. Stikord og lister af søgeord giver ingen point, og aktørens bekymring skal kobles til en beskyttelse eller en afvejning i samme eller den næste sætning.</li>
+      <li>Løfter tæller kun, hvis de står i jeres plan eller i en indrømmelse. Lover I noget, planen ikke indeholder, mister beskeden et point.</li>
     </ul>
     <p class="small muted">Måleren ved hver aktør viser løbende, hvor mange stemmer aktøren sandsynligvis vil give.</p>
   </div>
@@ -1355,9 +1357,9 @@ function respOptions(scene){
 /* ---------- votes ---------- */
 const CRIT = [
   {id:"words", n:"Hele sætninger med mindst 10 forskellige ord"},
-  {id:"concern", n:"Svarer på aktørens bekymring (mindst to af hendes eller hans emner)"},
+  {id:"concern", n:"Svarer på aktørens bekymring (mindst to af hendes eller hans emner, og mindst ét knyttet til en beskyttelse eller afvejning i samme eller næste sætning)"},
   {id:"local", n:"Giver lokal dækning (borgere, medarbejdere, steder i Aarhus)"},
-  {id:"protect", n:"Tilbyder en beskyttelse (indfasning, pilot, evaluering, inddragelse ...)"},
+  {id:"protect", n:"Tilbyder en beskyttelse, som står i planen eller i en indrømmelse (indfasning, evaluering, inddragelse ...)"},
   {id:"trade", n:"Forklarer afvejningen (budget, prioritering)"}
 ];
 const FUNC = ["og","at","er","det","vi","til","for","med","som","den","de","en","et","på","af","så","har","kan","skal","vil","ikke","også","men","når","fordi","jer","dig","du","i"];
@@ -1372,18 +1374,72 @@ function similar(a, b){
   let i = 0; A.forEach(w => { if (B.has(w)) i++; });
   return i / (A.size + B.size - i) >= 0.6;
 }
-function critHits(a, txt, others){
-  const t = (txt || "").toLowerCase(), ws = wordsOf(t);
-  const distinct = new Set(ws.filter(realWord)), funcN = new Set(ws.filter(w => FUNC.includes(w))).size;
-  const hits = [];
+/* Fix 1 (2026-10-20): a protection or a concrete promise only counts when the plan backs it.
+   Backing ids are plan levers, concessions bought in the vote round, and the chosen response. */
+const BACKED_BY = {
+  "indfas":["indfas"], "gradvis":["indfas"],
+  "undtag":["undtag","reng_land"],
+  "dialog":["stemme","add_stemme","tillid","medjust","dialog"], "inddrag":["stemme","add_stemme","tillid","medjust","dialog"],
+  "juster":["medjust","dialog"], "justér":["medjust","dialog"],
+  "evaluer":["kpi_laering","faglig","evaluering"], "følge op":["kpi_laering","faglig","evaluering"],
+  "pilot":["evaluering","kpi_laering","indfas"], "forsøg":["evaluering","kpi_laering","indfas"],
+  "garanti":["fuldtid","add_fuldtid","faste","stabilitet","add_stab","ombyg2","undtag","stemme","add_stemme"]
+};
+/* Concrete promises: [stems, backed?(items)] */
+const PROMISES = [
+  [["fuldtid"], x => x.has("fuldtid") || x.has("add_fuldtid")],
+  [["faste hjælpere","fast hjælper","samme hjælper"], x => x.has("faste")],
+  [["tillæg","løntillæg"], x => x.has("tillaeg")],
+  [["kanal","svarpligt"], x => x.has("stemme") || x.has("add_stemme")],
+  [["lederudvikling","ledelsesstøtte"], x => x.has("leder")],
+  [["mindre dokumentation","dokumentationskrav","færre krav"], x => x.has("dok")],
+  [["omorganiser","stabil nærledelse","stabil ledelse"], x => x.has("stabilitet") || x.has("add_stab")],
+  [["international"], x => x.has("intl")],
+  [["tillidsmodel","selv planlæg"], x => x.has("tillid")],
+  [["håndvask","medarbejderrum"], x => x.has("ombyg2") || !x.has("fin_vedligehold")],
+  [["rengøring hver anden","mere rengøring"], x => x.has("reng_land") || !x.has("fin_rengoring")],
+  [["sygeplejefaglig gennemgang","faglig gennemgang"], x => x.has("faglig")],
+  [["ingen minutstyring","ingen tidsregistrering","ingen stopur"], x => !x.has("stopur") || x.has("indfas")]
+];
+const COMMIT = ["lover","love ","vil ","sikrer","sikre ","indfører","indføre","garanter","får ","giver","gennemfør","sætter","skal ","kommer til"];
+function planItems(fp, conc, resp){
+  const x = new Set(fp.set);
+  Object.values(conc || {}).forEach(id => id && x.add(id));
+  if (resp && resp.id) x.add(resp.id);
+  return x;
+}
+/* Fix 2 (2026-10-20): points come only from full sentences, and a list of keywords is not a sentence. */
+function sentencesOf(t){ return t.split(/[.!?;:\n]+/).map(s => s.trim()).filter(Boolean); }
+function fullSentence(s, stems){
+  const ws = wordsOf(s), real = ws.filter(realWord);
+  if (new Set(real).size < 5 || new Set(ws.filter(w => FUNC.includes(w))).size < 2) return false;
+  const kw = real.filter(w => stems.some(k => k.indexOf(" ") < 0 && w.startsWith(k))).length;
+  return kw / real.length <= 0.65;
+}
+function critHits(a, txt, others, items){
+  items = items || new Set();
+  const t = (txt || "").toLowerCase();
+  const stems = a.keys.concat(LOCAL, PROTECT, TRADE);
+  const sents = sentencesOf(t).filter(s => fullSentence(s, stems)), ft = sents.join(". ");
+  const ws = wordsOf(ft), distinct = new Set(ws.filter(realWord)), funcN = new Set(ws.filter(w => FUNC.includes(w))).size;
+  const isBacked = k => (BACKED_BY[k] || []).some(id => items.has(id));
+  const hits = [], empty = [];
   if (distinct.size >= 10 && funcN >= 3) hits.push("words");
-  if (a.keys.filter(k => wordStart(t, k)).length >= 2) hits.push("concern");
-  if (LOCAL.some(k => wordStart(t, k))) hits.push("local");
-  if (PROTECT.some(k => wordStart(t, k))) hits.push("protect");
-  if (TRADE.some(k => wordStart(t, k))) hits.push("trade");
+  /* the concern must be answered where it is raised: a backed protection, a backed promise or a trade-off in the same or the next sentence */
+  const answers = s => PROTECT.some(k => wordStart(s, k) && isBacked(k)) || TRADE.some(k => wordStart(s, k)) || PROMISES.some(([ks, ok]) => ok(items) && ks.some(k => wordStart(s, k)));
+  const linked = sents.some((s, i) => a.keys.some(k => wordStart(s, k)) && (answers(s) || (i + 1 < sents.length && answers(sents[i + 1]))));
+  if (a.keys.filter(k => wordStart(ft, k)).length >= 2 && linked) hits.push("concern");
+  if (LOCAL.some(k => wordStart(ft, k))) hits.push("local");
+  if (PROTECT.some(k => wordStart(ft, k) && isBacked(k))) hits.push("protect");
+  if (TRADE.some(k => wordStart(ft, k))) hits.push("trade");
+  sents.filter(s => COMMIT.some(v => wordStart(s + " ", v))).forEach(s => {
+    PROTECT.forEach(k => { if (wordStart(s, k) && !isBacked(k)) empty.push(k); });
+    PROMISES.forEach(([ks, ok]) => { const k = ks.find(k => wordStart(s, k)); if (k && !ok(items)) empty.push(k); });
+  });
   const dup = others.some(o => similar(t, o));
   const content = hits.filter(h => h !== "words").length;
-  return { hits, dup, n: hits.includes("words") ? Math.max(0, content - (dup ? 2 : 0)) : 0 };
+  const n = hits.includes("words") ? Math.max(0, content - (dup ? 2 : 0) - (empty.length ? 1 : 0)) : 0;
+  return { hits, dup, empty:[...new Set(empty)], n };
 }
 function concOptions(a, set){
   const has = id => set.has(id);
@@ -1431,8 +1487,9 @@ function computeVotes(sel, resp, conc, pitches){
   ACTORS.forEach(a => {
     const opt = conc[a.id] ? concOptions(a, fp.set).find(x => x.id === conc[a.id]) : null;
     const others = ACTORS.filter(b => b.id !== a.id).map(b => (pitches[b.id] || "").toLowerCase());
-    const k = critHits(a, pitches[a.id], others), met = alreadyMet(a, fp.set);
+    const k = critHits(a, pitches[a.id], others, planItems(fp, conc, resp)), met = alreadyMet(a, fp.set);
     let s = actorShare(a, opt, k, met); const notes = [];
+    if (k.empty.length) notes.push(`beskeden lovede noget, som ikke står i planen eller i en indrømmelse (${k.empty.join(", ")}), og det kostede troværdighed`);
     if (a.id === "tr" && !ms.pos) { s *= o.med > -3 ? .75 : .5; notes.push(`MED-hovedudvalget er ${ms.n}, så tillidsrepræsentanten kan ikke trække hele sit bagland`); }
     if (a.id === "spl" && fp.set.has("fin_vedligehold") && !(opt && opt.id === "ombyg2")) { s *= .5; notes.push("Det udskudte vedligehold rammer arbejdsforholdene på plejehjemmene"); }
     if (a.id === "spl" && o.paabud) { s *= .5; notes.push("Påbuddet fra tilsynet gør den sygeplejefaglige leder tilbageholdende"); }
@@ -1862,9 +1919,10 @@ function updateWhip(){
   $("#w-proj").className = "proj " + (V.pass ? "up" : "down");
   ACTORS.forEach(a => {
     const others = ACTORS.filter(b => b.id !== a.id).map(b => (S.pitches[b.id] || "").toLowerCase());
-    const k = critHits(a, S.pitches[a.id], others);
+    const k = critHits(a, S.pitches[a.id], others, planItems(fp, S.conc, S.resp));
     document.querySelectorAll(`#k-${a.id} li`).forEach(li => li.classList.toggle("ok", k.hits.includes(li.dataset.c)));
-    $("#dup-" + a.id).textContent = k.dup ? "Beskeden ligner jeres besked til en anden aktør for meget og tæller mindre. Skriv til den enkelte." : "";
+    $("#dup-" + a.id).textContent = [k.dup ? "Beskeden ligner jeres besked til en anden aktør for meget og tæller mindre. Skriv til den enkelte." : "",
+      k.empty.length ? `Beskeden lover noget, som ikke står i planen eller i en indrømmelse (${k.empty.join(", ")}). Tomme løfter koster troværdighed.` : ""].filter(Boolean).join(" ");
   });
   const msg = `Puljen med aftalerne for 2028: ${fmtNum(t.cost)} af ${fmtNum(t.budget)} mio. kr.` + (over ? " Aftalerne kan ikke finansieres. Vælg en billigere." : "");
   $("#w-budget").textContent = msg; $("#w-budget2").textContent = msg;
